@@ -2,8 +2,12 @@ const chalk = require('chalk');
 const yargs = require('yargs');
 const notes = require('./notes.js');
 
-// Customer yargs version
+
+
+// Custom yargs version
 yargs.version('1.2.3');
+
+
 
 yargs.command({
     command: 'add',
@@ -27,6 +31,7 @@ yargs.command({
 })
 
 
+
 // Create Remove Command
 yargs.command({
     command: 'remove',
@@ -44,14 +49,18 @@ yargs.command({
     }
 })
 
+
+
 // List command
 yargs.command({
     command: 'list',
     describe: 'List all notes.',
     handler: () => {
-        console.log(chalk.bold('List all of the notes!'));
+        notes.listNotes();
     }
 })
+
+
 
 // Read command
 yargs.command({
@@ -61,5 +70,7 @@ yargs.command({
         console.log(chalk.bold('Read this note!'));
     }
 })
+
+
 
 yargs.parse();

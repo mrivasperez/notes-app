@@ -24,10 +24,10 @@ const addNote = (title, body) => {
          body: body
       });
       saveNotes(notes);
-      console.log('A new note was added.');
+      console.log(chalk.green.inverse('A new note was added.'));
    // If there are duplicate notes, state the following:
    } else {
-      console.log('Note title already exists.')
+      console.log(chalk.yellowBright.inverse('Note title already exists.'))
    }
 };
 
@@ -66,8 +66,25 @@ const loadNotes = () => {
    }
 };
 
+
+
+const listNotes = () => {
+   const notes = loadNotes();
+   if (notes.length > 0){
+      console.log(chalk.inverse('These are your notes...'))
+      notes.forEach((note) => {
+         console.log(note.title);
+      })
+   } else {
+      console.log(chalk.red.inverse('You have no notes.'))
+   }
+}
+
+
+
 module.exports = {
    getNotes: getNotes,
    addNote: addNote,
-   removeNote: removeNote
+   removeNote: removeNote,
+   listNotes: listNotes
 };
