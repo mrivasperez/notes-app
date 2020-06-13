@@ -34,7 +34,18 @@ const addNote = function (title, body) {
 
 
 const removeNote = function (title) {
-   console.log('REMOVE THIS NOTE!')
+   console.log(`The note titled "${title}" will be removed.`);
+   const notes = loadNotes();
+   // Use array filter method to remove the matching note if any
+   const filteredNotes = notes.filter(function(note){
+      return note.title != title;
+   })
+   if(filteredNotes.length === notes.length){
+      console.log(chalk.red.inverse(`There is no note by that name...`))
+   } else {
+      console.log(chalk.green.inverse('The note was deleted.'))
+      saveNotes(filteredNotes);
+   }
 }
 
 
@@ -54,8 +65,6 @@ const loadNotes = function(){
       return[];
    }
 };
-
-
 
 module.exports = {
    getNotes: getNotes,
