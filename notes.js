@@ -4,13 +4,13 @@ const chalk = require('chalk');
 
 
 
-const getNotes = function(){
+const getNotes = () => {
    console.log('Your notes...')
 };
 
 
 
-const addNote = function (title, body) {
+const addNote = (title, body) => {
    const notes = loadNotes();
    // Ensure the title has not been previously used
    const duplicateNotes = notes.filter(function(note){
@@ -33,7 +33,7 @@ const addNote = function (title, body) {
 
 
 
-const removeNote = function (title) {
+const removeNote = title => {
    console.log(`The note titled "${title}" will be removed.`);
    const notes = loadNotes();
    // Use array filter method to remove the matching note if any
@@ -49,14 +49,14 @@ const removeNote = function (title) {
 }
 
 
-const saveNotes = function(notes){
+const saveNotes = notes => {
    const dataJSON = JSON.stringify(notes);
    fs.writeFileSync('notes.json', dataJSON);
 }
 
 
 
-const loadNotes = function(){
+const loadNotes = () => {
    try {
       const dataBuffer = fs.readFileSync('notes.json');
       const dataJSON = dataBuffer.toString();
