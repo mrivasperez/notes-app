@@ -5,14 +5,6 @@ const notes = require('./notes.js');
 // Customer yargs version
 yargs.version('1.2.3');
 
-// Add notes
-// Remove Notes
-// Read individual notes
-// List notes
-// Help options for all above
-
-// 1. Add Notes
-
 yargs.command({
     command: 'add',
     describe: 'Add a new note',
@@ -39,8 +31,16 @@ yargs.command({
 yargs.command({
     command: 'remove',
     describe: 'Remove a note.',
+    // Require the "--title" option
+    builder: {
+        title: {
+            describe: 'The title of the note you wish to remove',
+            demandOption:true,
+            type: 'string'
+        }
+    },
     handler: function(){
-        console.log(chalk.bold('Removing a note!'));
+        notes.removeNote(argv.title);
     }
 })
 
