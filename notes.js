@@ -3,7 +3,6 @@ const chalk = require('chalk');
 
 
 
-
 const getNotes = () => {
    console.log('Your notes...')
 };
@@ -13,12 +12,10 @@ const getNotes = () => {
 const addNote = (title, body) => {
    const notes = loadNotes();
    // Ensure the title has not been previously used
-   const duplicateNotes = notes.filter(function(note){
-      // Filter all that meet the following condition:
-      return note.title === title;
-   });
+   const duplicateNotes = notes.filter((note) => note.title === title);
+   const duplicateNote = notes.find((note) => note.title === title)
    // If there are no duplicate notes run script
-   if(duplicateNotes.length === 0){
+   if(!duplicateNote){
       notes.push({
          title: title,
          body: body
