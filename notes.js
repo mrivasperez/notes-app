@@ -1,13 +1,9 @@
 const fs = require('fs');
 const chalk = require('chalk');
 
-
-
 const getNotes = () => {
-   console.log('Your notes...')
+   console.log('Your notes...');
 };
-
-
 
 const addNote = (title, body) => {
    const notes = loadNotes();
@@ -27,8 +23,6 @@ const addNote = (title, body) => {
    }
 };
 
-
-
 const removeNote = title => {
    console.log(`The note titled "${title}" will be removed.`);
    const notes = loadNotes();
@@ -44,13 +38,10 @@ const removeNote = title => {
    }
 }
 
-
 const saveNotes = notes => {
    const dataJSON = JSON.stringify(notes);
    fs.writeFileSync('notes.json', dataJSON);
 }
-
-
 
 const loadNotes = () => {
    try {
@@ -61,8 +52,6 @@ const loadNotes = () => {
       return[];
    }
 };
-
-
 
 const listNotes = () => {
    const notes = loadNotes();
@@ -75,7 +64,6 @@ const listNotes = () => {
       console.log(chalk.red.inverse('You have no notes.'))
    }
 }
-
 
 // 
 const readNote = (title) => {
@@ -93,8 +81,6 @@ const readNote = (title) => {
    // Find note and print title (styled in chalk) and body (plain)
    // If no note is found, print error
 }
-
-
 
 module.exports = {
    getNotes: getNotes,
