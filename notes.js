@@ -12,7 +12,6 @@ const getNotes = () => {
 const addNote = (title, body) => {
    const notes = loadNotes();
    // Ensure the title has not been previously used
-   const duplicateNotes = notes.filter((note) => note.title === title);
    const duplicateNote = notes.find((note) => note.title === title)
    // If there are no duplicate notes run script
    if(!duplicateNote){
@@ -78,10 +77,29 @@ const listNotes = () => {
 }
 
 
+// 
+const readNote = (title) => {
+   const notes = loadNotes();
+   // Search for note by title
+   const desiredNote = notes.find((note) => note.title === title);
+   if(desiredNote){
+      console.log(chalk.inverse('Here is the note you requested:'));
+      console.log(chalk.bold(`Title: ${desiredNote.title}`));
+      console.log(desiredNote.body);
+   // If there are duplicate notes, state the following:
+   } else {
+      console.log(chalk.yellowBright.inverse('Note title not found.'));
+   }
+   // Find note and print title (styled in chalk) and body (plain)
+   // If no note is found, print error
+}
+
+
 
 module.exports = {
    getNotes: getNotes,
    addNote: addNote,
    removeNote: removeNote,
-   listNotes: listNotes
+   listNotes: listNotes,
+   readNote: readNote
 };
