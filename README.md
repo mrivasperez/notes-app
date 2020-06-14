@@ -1,2 +1,5 @@
 # notes-app
-A CLI Notes App
+by mrivasperez
+
+## About
+notes-app is a Node.js CLI notes application.
