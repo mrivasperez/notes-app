@@ -20,7 +20,8 @@ I WILL BE SHARING THIS SOON.
 
 ## Built With
 - Node.js
-NPM Packages:
+
+NPM Packages used:
 - chalk
 - yargs
 
