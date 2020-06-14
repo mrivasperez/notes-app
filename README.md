@@ -19,6 +19,7 @@ To get this application up and running you need the following:
 I WILL BE SHARING THIS SOON.
 
 ## Built With
+- JavaScript
 - Node.js
 
 NPM Packages used:
