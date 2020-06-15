@@ -16,7 +16,19 @@ To get this application up and running you need the following:
 - Installing this application is as simple as cloning or downloading the repo onto your local machine. If you have node installed and the application files on your computer, there are no additional installation steps to worry about.
 
 ## How to use
-I WILL BE SHARING THIS SOON.
+
+miguel@Miguels-MBP notes-app % node app.js help
+app.js [command]
+
+Commands:
+  app.js add     Add a new note
+  app.js remove  Remove a note.
+  app.js list    List all notes.
+  app.js read    Read a note.
+
+Options:
+  --help     Show help                                                 [boolean]
+  --version  Show version number                                       [boolean]
 
 ## Built With
 - JavaScript
