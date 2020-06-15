@@ -16,10 +16,14 @@ To get this application up and running you need the following:
 - Installing this application is as simple as cloning or downloading the repo onto your local machine. If you have node installed and the application files on your computer, there are no additional installation steps to worry about.
 
 ## How to use
+1. Open your terminal and run app.js using node.
 
-miguel@Miguels-MBP notes-app % node app.js help
-app.js [command]
+```
+node app.js help
+```
+will return:
 
+```
 Commands:
   app.js add     Add a new note
   app.js remove  Remove a note.
@@ -29,6 +33,30 @@ Commands:
 Options:
   --help     Show help                                                 [boolean]
   --version  Show version number                                       [boolean]
+```
+
+To add a note you can run the following command:
+
+```
+node app.js add --title="Title" --body="Some text to make up the body of the note."
+```
+
+To remove a note you can run the following command:
+```
+node app.js remove --title="Title note to be removed"
+```
+
+To list all your note, run the following command:
+```
+node app.js list
+```
+
+To read a note, run the following command:
+```
+node app read --title="The title of the note you want to read."
+```
+
+All notes are saved in the file "notes.json"
 
 ## Built With
 - JavaScript
