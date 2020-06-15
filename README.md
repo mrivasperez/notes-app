@@ -16,8 +16,9 @@ To get this application up and running you need the following:
 - Installing this application is as simple as cloning or downloading the repo onto your local machine. If you have node installed and the application files on your computer, there are no additional installation steps to worry about.
 
 ## How to use
-1. Open your terminal and run app.js using node.
+Remember, this is a command-line interface application.
 
+Typing the following will help you learn the commands to use notes-app:
 ```
 node app.js help
 ```
